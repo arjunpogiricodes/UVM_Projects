@@ -1,0 +1,691 @@
+Command: /home1/B110/PogiRiArjun/VLSI_RN/UVM_LABS/extra_assignments/sequencer_arbitration/sim/./simv -a test.log +ntb_random_seed_automatic +UVM_TESTNAME=ram_seqr_arb_test
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06-SP1_Full64; Runtime version T-2022.06-SP1_Full64;  Nov 13 14:42 2024
+NOTE: automatic random seed used: 424822173
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test ram_seqr_arb_test...
+UVM_INFO ../tb/ram_env.sv(64) @ 0: uvm_test_top.ram_envh [RAM_ram_env] THIS IS BUILD PHASE OF ram_env
+UVM_INFO ../wr_agt_top/ram_wr_monitor.sv(51) @ 0: uvm_test_top.ram_envh.wr_agnth.monh [RAM_WR_MONITOR] THIS IS MONITOR IN RUN
+UVM_INFO ../test/ram_test.sv(124) @ 0: uvm_test_top [ram_seqr_arb_test] The current arbitration set is: SEQ_ARB_RANDOM
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+---------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                        
+---------------------------------------------------------------------------------------------
+req                            write_xtn  -     @676                                         
+  begin_time                   time       64    0                                            
+  depth                        int        32    'd2                                          
+  parent sequence (name)       string     8     single_h                                     
+  parent sequence (full name)  string     45    uvm_test_top.ram_envh.wr_agnth.seqrh.single_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh         
+  data                         integral   64    'd22                                         
+  address                      integral   12    'd55                                         
+  write                        integral   -1    'd0                                          
+  xtn_delay                    integral   65    'd2076063427002720879                        
+  xtn_type                     addr_t     1     GOOD_XTN                                     
+---------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                     
+------------------------------------------------------------------------------------------
+req                            write_xtn  -     @684                                      
+  begin_time                   time       64    0                                         
+  depth                        int        32    'd2                                       
+  parent sequence (name)       string     5     odd_h                                     
+  parent sequence (full name)  string     42    uvm_test_top.ram_envh.wr_agnth.seqrh.odd_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh      
+  data                         integral   64    'd66                                      
+  address                      integral   12    'd1                                       
+  write                        integral   -1    'd1                                       
+  xtn_delay                    integral   65    'd7007991784304049997                     
+  xtn_type                     addr_t     1     GOOD_XTN                                  
+------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @680                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     rand_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.rand_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd36                                       
+  address                      integral   12    'd145                                      
+  write                        integral   -1    'd0                                        
+  xtn_delay                    integral   65    'd10658222757667735345                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @688                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     even_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.even_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd69                                       
+  address                      integral   12    'd0                                        
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd11174566476956310483                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @703                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     rand_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.rand_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd62                                       
+  address                      integral   12    'd95                                       
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd13119977037955965836                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @713                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     rand_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.rand_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd42                                       
+  address                      integral   12    'd122                                      
+  write                        integral   -1    'd0                                        
+  xtn_delay                    integral   65    'd13058284036291926440                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @717                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     rand_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.rand_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd55                                       
+  address                      integral   12    'd79                                       
+  write                        integral   -1    'd0                                        
+  xtn_delay                    integral   65    'd9373824509323003711                      
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @723                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     rand_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.rand_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd45                                       
+  address                      integral   12    'd158                                      
+  write                        integral   -1    'd0                                        
+  xtn_delay                    integral   65    'd1057655254439694398                      
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                     
+------------------------------------------------------------------------------------------
+req                            write_xtn  -     @699                                      
+  begin_time                   time       64    0                                         
+  depth                        int        32    'd2                                       
+  parent sequence (name)       string     5     odd_h                                     
+  parent sequence (full name)  string     42    uvm_test_top.ram_envh.wr_agnth.seqrh.odd_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh      
+  data                         integral   64    'd42                                      
+  address                      integral   12    'd3                                       
+  write                        integral   -1    'd1                                       
+  xtn_delay                    integral   65    'd15230539552527144691                    
+  xtn_type                     addr_t     1     GOOD_XTN                                  
+------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @727                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     rand_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.rand_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd78                                       
+  address                      integral   12    'd52                                       
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd12139959373339348115                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                     
+------------------------------------------------------------------------------------------
+req                            write_xtn  -     @731                                      
+  begin_time                   time       64    0                                         
+  depth                        int        32    'd2                                       
+  parent sequence (name)       string     5     odd_h                                     
+  parent sequence (full name)  string     42    uvm_test_top.ram_envh.wr_agnth.seqrh.odd_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh      
+  data                         integral   64    'd61                                      
+  address                      integral   12    'd5                                       
+  write                        integral   -1    'd1                                       
+  xtn_delay                    integral   65    'd1941810308039825294                     
+  xtn_type                     addr_t     1     GOOD_XTN                                  
+------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @737                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     rand_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.rand_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd61                                       
+  address                      integral   12    'd29                                       
+  write                        integral   -1    'd0                                        
+  xtn_delay                    integral   65    'd16964538903773297072                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @709                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     even_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.even_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd78                                       
+  address                      integral   12    'd2                                        
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd9008087977915044643                      
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                     
+------------------------------------------------------------------------------------------
+req                            write_xtn  -     @741                                      
+  begin_time                   time       64    0                                         
+  depth                        int        32    'd2                                       
+  parent sequence (name)       string     5     odd_h                                     
+  parent sequence (full name)  string     42    uvm_test_top.ram_envh.wr_agnth.seqrh.odd_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh      
+  data                         integral   64    'd87                                      
+  address                      integral   12    'd7                                       
+  write                        integral   -1    'd1                                       
+  xtn_delay                    integral   65    'd6518460921656264196                     
+  xtn_type                     addr_t     1     GOOD_XTN                                  
+------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @751                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     even_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.even_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd66                                       
+  address                      integral   12    'd4                                        
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd16097254136433921338                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @745                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     rand_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.rand_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd29                                       
+  address                      integral   12    'd129                                      
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd11663281107999623320                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @765                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     rand_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.rand_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd40                                       
+  address                      integral   12    'd198                                      
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd13896848780489109168                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+---------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                        
+---------------------------------------------------------------------------------------------
+req                            write_xtn  -     @695                                         
+  begin_time                   time       64    0                                            
+  depth                        int        32    'd2                                          
+  parent sequence (name)       string     8     single_h                                     
+  parent sequence (full name)  string     45    uvm_test_top.ram_envh.wr_agnth.seqrh.single_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh         
+  data                         integral   64    'd65                                         
+  address                      integral   12    'd55                                         
+  write                        integral   -1    'd0                                          
+  xtn_delay                    integral   65    'd11808322752432870111                       
+  xtn_type                     addr_t     1     GOOD_XTN                                     
+---------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @759                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     even_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.even_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd54                                       
+  address                      integral   12    'd6                                        
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd8527140176307093732                      
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+---------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                        
+---------------------------------------------------------------------------------------------
+req                            write_xtn  -     @773                                         
+  begin_time                   time       64    0                                            
+  depth                        int        32    'd2                                          
+  parent sequence (name)       string     8     single_h                                     
+  parent sequence (full name)  string     45    uvm_test_top.ram_envh.wr_agnth.seqrh.single_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh         
+  data                         integral   64    'd85                                         
+  address                      integral   12    'd55                                         
+  write                        integral   -1    'd1                                          
+  xtn_delay                    integral   65    'd1632492424561378384                        
+  xtn_type                     addr_t     1     GOOD_XTN                                     
+---------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                     
+------------------------------------------------------------------------------------------
+req                            write_xtn  -     @755                                      
+  begin_time                   time       64    0                                         
+  depth                        int        32    'd2                                       
+  parent sequence (name)       string     5     odd_h                                     
+  parent sequence (full name)  string     42    uvm_test_top.ram_envh.wr_agnth.seqrh.odd_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh      
+  data                         integral   64    'd90                                      
+  address                      integral   12    'd9                                       
+  write                        integral   -1    'd1                                       
+  xtn_delay                    integral   65    'd486224315527010182                      
+  xtn_type                     addr_t     1     GOOD_XTN                                  
+------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @779                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     even_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.even_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd73                                       
+  address                      integral   12    'd8                                        
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd15268171721800354944                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @769                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     rand_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.rand_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd42                                       
+  address                      integral   12    'd170                                      
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd16907641035512487594                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                     
+------------------------------------------------------------------------------------------
+req                            write_xtn  -     @787                                      
+  begin_time                   time       64    0                                         
+  depth                        int        32    'd2                                       
+  parent sequence (name)       string     5     odd_h                                     
+  parent sequence (full name)  string     42    uvm_test_top.ram_envh.wr_agnth.seqrh.odd_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh      
+  data                         integral   64    'd33                                      
+  address                      integral   12    'd11                                      
+  write                        integral   -1    'd1                                       
+  xtn_delay                    integral   65    'd3701481626068501942                     
+  xtn_type                     addr_t     1     GOOD_XTN                                  
+------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @793                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     even_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.even_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd62                                       
+  address                      integral   12    'd10                                       
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd12285444803187951053                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                     
+------------------------------------------------------------------------------------------
+req                            write_xtn  -     @797                                      
+  begin_time                   time       64    0                                         
+  depth                        int        32    'd2                                       
+  parent sequence (name)       string     5     odd_h                                     
+  parent sequence (full name)  string     42    uvm_test_top.ram_envh.wr_agnth.seqrh.odd_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh      
+  data                         integral   64    'd42                                      
+  address                      integral   12    'd13                                      
+  write                        integral   -1    'd1                                       
+  xtn_delay                    integral   65    'd10788447807982414411                    
+  xtn_type                     addr_t     1     GOOD_XTN                                  
+------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @803                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     even_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.even_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd47                                       
+  address                      integral   12    'd12                                       
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd11927779258273841383                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                     
+------------------------------------------------------------------------------------------
+req                            write_xtn  -     @807                                      
+  begin_time                   time       64    0                                         
+  depth                        int        32    'd2                                       
+  parent sequence (name)       string     5     odd_h                                     
+  parent sequence (full name)  string     42    uvm_test_top.ram_envh.wr_agnth.seqrh.odd_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh      
+  data                         integral   64    'd56                                      
+  address                      integral   12    'd15                                      
+  write                        integral   -1    'd1                                       
+  xtn_delay                    integral   65    'd17375980788192627524                    
+  xtn_type                     addr_t     1     GOOD_XTN                                  
+------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                     
+------------------------------------------------------------------------------------------
+req                            write_xtn  -     @817                                      
+  begin_time                   time       64    0                                         
+  depth                        int        32    'd2                                       
+  parent sequence (name)       string     5     odd_h                                     
+  parent sequence (full name)  string     42    uvm_test_top.ram_envh.wr_agnth.seqrh.odd_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh      
+  data                         integral   64    'd63                                      
+  address                      integral   12    'd17                                      
+  write                        integral   -1    'd1                                       
+  xtn_delay                    integral   65    'd2512756866178881483                     
+  xtn_type                     addr_t     1     GOOD_XTN                                  
+------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                     
+------------------------------------------------------------------------------------------
+req                            write_xtn  -     @821                                      
+  begin_time                   time       64    0                                         
+  depth                        int        32    'd2                                       
+  parent sequence (name)       string     5     odd_h                                     
+  parent sequence (full name)  string     42    uvm_test_top.ram_envh.wr_agnth.seqrh.odd_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh      
+  data                         integral   64    'd67                                      
+  address                      integral   12    'd19                                      
+  write                        integral   -1    'd1                                       
+  xtn_delay                    integral   65    'd15184386707032007785                    
+  xtn_type                     addr_t     1     GOOD_XTN                                  
+------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @811                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     even_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.even_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd64                                       
+  address                      integral   12    'd1904                                     
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd10585541103986070323                     
+  xtn_type                     addr_t     1     BAD_XTN                                    
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+---------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                        
+---------------------------------------------------------------------------------------------
+req                            write_xtn  -     @783                                         
+  begin_time                   time       64    0                                            
+  depth                        int        32    'd2                                          
+  parent sequence (name)       string     8     single_h                                     
+  parent sequence (full name)  string     45    uvm_test_top.ram_envh.wr_agnth.seqrh.single_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh         
+  data                         integral   64    'd85                                         
+  address                      integral   12    'd55                                         
+  write                        integral   -1    'd0                                          
+  xtn_delay                    integral   65    'd11663453427154984666                       
+  xtn_type                     addr_t     1     GOOD_XTN                                     
+---------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+---------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                        
+---------------------------------------------------------------------------------------------
+req                            write_xtn  -     @831                                         
+  begin_time                   time       64    0                                            
+  depth                        int        32    'd2                                          
+  parent sequence (name)       string     8     single_h                                     
+  parent sequence (full name)  string     45    uvm_test_top.ram_envh.wr_agnth.seqrh.single_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh         
+  data                         integral   64    'd77                                         
+  address                      integral   12    'd55                                         
+  write                        integral   -1    'd0                                          
+  xtn_delay                    integral   65    'd568900720278782674                         
+  xtn_type                     addr_t     1     GOOD_XTN                                     
+---------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @827                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     even_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.even_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd82                                       
+  address                      integral   12    'd1904                                     
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd13938502579438168563                     
+  xtn_type                     addr_t     1     BAD_XTN                                    
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+---------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                        
+---------------------------------------------------------------------------------------------
+req                            write_xtn  -     @835                                         
+  begin_time                   time       64    0                                            
+  depth                        int        32    'd2                                          
+  parent sequence (name)       string     8     single_h                                     
+  parent sequence (full name)  string     45    uvm_test_top.ram_envh.wr_agnth.seqrh.single_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh         
+  data                         integral   64    'd84                                         
+  address                      integral   12    'd55                                         
+  write                        integral   -1    'd0                                          
+  xtn_delay                    integral   65    'd15018214028978548652                       
+  xtn_type                     addr_t     1     GOOD_XTN                                     
+---------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+-------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                      
+-------------------------------------------------------------------------------------------
+req                            write_xtn  -     @841                                       
+  begin_time                   time       64    0                                          
+  depth                        int        32    'd2                                        
+  parent sequence (name)       string     6     even_h                                     
+  parent sequence (full name)  string     43    uvm_test_top.ram_envh.wr_agnth.seqrh.even_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh       
+  data                         integral   64    'd80                                       
+  address                      integral   12    'd18                                       
+  write                        integral   -1    'd1                                        
+  xtn_delay                    integral   65    'd14556972097849646642                     
+  xtn_type                     addr_t     1     GOOD_XTN                                   
+-------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+---------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                        
+---------------------------------------------------------------------------------------------
+req                            write_xtn  -     @845                                         
+  begin_time                   time       64    0                                            
+  depth                        int        32    'd2                                          
+  parent sequence (name)       string     8     single_h                                     
+  parent sequence (full name)  string     45    uvm_test_top.ram_envh.wr_agnth.seqrh.single_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh         
+  data                         integral   64    'd33                                         
+  address                      integral   12    'd55                                         
+  write                        integral   -1    'd1                                          
+  xtn_delay                    integral   65    'd2573382088712949722                        
+  xtn_type                     addr_t     1     GOOD_XTN                                     
+---------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+---------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                        
+---------------------------------------------------------------------------------------------
+req                            write_xtn  -     @849                                         
+  begin_time                   time       64    0                                            
+  depth                        int        32    'd2                                          
+  parent sequence (name)       string     8     single_h                                     
+  parent sequence (full name)  string     45    uvm_test_top.ram_envh.wr_agnth.seqrh.single_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh         
+  data                         integral   64    'd64                                         
+  address                      integral   12    'd55                                         
+  write                        integral   -1    'd1                                          
+  xtn_delay                    integral   65    'd16246620023287005832                       
+  xtn_type                     addr_t     1     GOOD_XTN                                     
+---------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+---------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                        
+---------------------------------------------------------------------------------------------
+req                            write_xtn  -     @853                                         
+  begin_time                   time       64    0                                            
+  depth                        int        32    'd2                                          
+  parent sequence (name)       string     8     single_h                                     
+  parent sequence (full name)  string     45    uvm_test_top.ram_envh.wr_agnth.seqrh.single_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh         
+  data                         integral   64    'd38                                         
+  address                      integral   12    'd55                                         
+  write                        integral   -1    'd0                                          
+  xtn_delay                    integral   65    'd1890371841848797053                        
+  xtn_type                     addr_t     1     GOOD_XTN                                     
+---------------------------------------------------------------------------------------------
+UVM_INFO ../wr_agt_top/ram_wr_driver.sv(75) @ 0: uvm_test_top.ram_envh.wr_agnth.drvh [DRIVER] Displaying the Driver Data
+---------------------------------------------------------------------------------------------
+Name                           Type       Size  Value                                        
+---------------------------------------------------------------------------------------------
+req                            write_xtn  -     @857                                         
+  begin_time                   time       64    0                                            
+  depth                        int        32    'd2                                          
+  parent sequence (name)       string     8     single_h                                     
+  parent sequence (full name)  string     45    uvm_test_top.ram_envh.wr_agnth.seqrh.single_h
+  sequencer                    string     36    uvm_test_top.ram_envh.wr_agnth.seqrh         
+  data                         integral   64    'd90                                         
+  address                      integral   12    'd55                                         
+  write                        integral   -1    'd0                                          
+  xtn_delay                    integral   65    'd6200903845290728451                        
+  xtn_type                     addr_t     1     GOOD_XTN                                     
+---------------------------------------------------------------------------------------------
+UVM_INFO /home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_objection.svh(1274) @ 0: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   45
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[DRIVER]    40
+[RAM_WR_MONITOR]     1
+[RAM_ram_env]     1
+[RNTST]     1
+[TEST_DONE]     1
+[ram_seqr_arb_test]     1
+$finish called from file "/home/cad/eda/SYNOPSYS/VCS/vcs/T-2022.06-SP1/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time                    0
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0 ps
+CPU Time:      0.330 seconds;       Data structure size:   0.6Mb
+Wed Nov 13 14:42:19 2024
