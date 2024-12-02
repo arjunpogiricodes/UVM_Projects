@@ -1,0 +1,26 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "ram_if": [
+        "ram_if",
+        "i83dr",
+        "module",
+        2
+    ],
+    "top": [
+        "top",
+        "Emx8S",
+        "module",
+        3
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        4
+    ]
+}
