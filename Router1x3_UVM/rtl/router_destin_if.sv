@@ -26,6 +26,7 @@ interface router_destin_if(input bit clk);
 
                output read_enb;
                input  valid_out;
+               input data_out;
  
      endclocking 
 

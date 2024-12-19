@@ -11,6 +11,10 @@ class source_seq extends uvm_sequence #(source_xtn);
 
      `uvm_object_utils(source_seq)
 
+// addres declaration
+
+      bit [1:0] addr;
+
 // function new constructor
 
       function new(string name = "source_seq");
@@ -41,15 +45,18 @@ class small_seq extends source_seq;
 // body task =generate 1 to 20 packets payload generates
 
       task body();
+         if(!uvm_config_db #(bit[2])::get(null,get_full_name(),"bit",addr))
+                  `uvm_fatal(get_full_name(),"cannot get the address from test class are set it check")
+
          req = source_xtn :: type_id :: create("req");
          start_item(req);
-         assert(req.randomize() with {req.header_byte[7:2] inside{[1:21]};
-                                      req.header_byte[1:0] == 2'b00;} )
-
+         assert(req.randomize() with {req.header_byte[1:0] == addr;req.header_byte[7:2] inside{[1:21]};} )
              else 
                 begin
                       `uvm_info(get_full_name(),"!!!!!!!!!!!randomization is failed in source seqs at small seq!!!!!!!!!",UVM_LOW)
                 end
+
+          
          finish_item(req);
 
       endtask
@@ -76,10 +83,13 @@ class medium_seq extends source_seq;
 // task body for packets stimulus 22 to 41
 
        task body();
+         if(!uvm_config_db #(bit[2])::get(null,get_full_name(),"bit",addr))
+                  `uvm_fatal(get_full_name(),"cannot get the address from test class are set it check")
+
            req = source_xtn :: type_id :: create("req");
            start_item(req);
-           assert(req.randomize() with {header_byte[7:2] inside {[22:41]};
-                                      header_byte[1:0] == 2'b01; } ) 
+           assert(req.randomize() with {req.header_byte[7:2] inside {[22:41]};
+                                      req.header_byte[1:0] == addr; } ) 
                 else 
                     begin
                          `uvm_info(get_full_name(),"!!!!!!!!randomization is failed in source seqs at medium seq!!!!!!!!!!!",UVM_LOW)
@@ -110,18 +120,18 @@ class large_seq extends source_seq;
 
 
        task body();
-           repeat(5)
-           begin
+        if(!uvm_config_db #(bit[2])::get(null,get_full_name(),"bit",addr))
+                  `uvm_fatal(get_full_name(),"cannot get the address from test class are set it check")
+
            req = source_xtn :: type_id :: create("req");
            start_item(req);
-           assert(req.randomize() with {header_byte[7:2] inside {[42:63]};
-                                      header_byte[1:0] == 2'b10; } ) 
+           assert(req.randomize() with {req.header_byte[7:2] inside {[42:63]};
+                                      req.header_byte[1:0] == addr; } ) 
                 else 
                     begin
                          `uvm_info(get_full_name(),"!!!!!!!!randomization is failed in source seqs at medium seq!!!!!!!!!!!",UVM_LOW)
                      end 
             finish_item(req);
-           end
        endtask
 
 endclass

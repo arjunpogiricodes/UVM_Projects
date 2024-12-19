@@ -51,12 +51,48 @@ class source_driver extends uvm_driver #(source_xtn);
 
         task run_phase(uvm_phase phase);
                super.run_phase(phase); 
+                     @(vif.source_drv);
+                    vif.source_drv.reset <= 1'b0;
+                    @(vif.source_drv);
+                    vif.source_drv.reset <= 1'b1;
+                    
+
                forever begin
+			                
                seq_item_port.get_next_item(req);
+
+               send_to_dut(req); 
                seq_item_port.item_done();
-               req.print();
+               //req.print();
                end  
         endtask
+
+// send to dut 
+
+      task send_to_dut(source_xtn req);
+
+           while(vif.source_drv.busy != 1'b0)
+		   begin
+                 @(vif.source_drv);
+		   end		  
+           vif.source_drv.pkt_valid <= 1'b1;
+           vif.source_drv.data_in   <=  req.header_byte;
+           @(vif.source_drv); 
+           foreach(req.payload[i])
+                    begin
+                        while(vif.source_drv.busy != 1'b0)
+			begin
+                            @(vif.source_drv);
+			end 
+                        vif.source_drv.data_in <= req.payload[i];
+                        @(vif.source_drv);
+                    end   
+  
+          vif.source_drv.pkt_valid <= 1'b0;
+          vif.source_drv.data_in <= req.parity_byte; 
+           repeat(2)
+          @(vif.source_drv);
+      endtask
 
 
 

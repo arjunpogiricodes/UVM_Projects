@@ -14,13 +14,21 @@ class destin_monitor extends uvm_monitor;
 
             destin_agent_config m_cfg;
             virtual router_destin_if.D_MON vif; 
+// declaring the destin transaction
+ 
+                  destin_xtn destin_mon;
+				  
+// tlm port for write to score board	
 
+        uvm_analysis_port #(destin_xtn) dmon_port;			  
+           
 // function new constructor 
 
 
         function new(string name = "destin_monitor" , uvm_component parent = null );
 
                      super.new(name,parent);
+		             dmon_port = new ("dmon_port",this); 
 					 
          endfunction 
 
@@ -44,14 +52,50 @@ class destin_monitor extends uvm_monitor;
 
 // run phase
 
+
           task run_phase(uvm_phase phase);
 
-                 phase.raise_objection(this);
-
-// calling the method for collect the data from  interface
-
-                 phase.drop_objection(this);
+               forever
+                      begin
+                         
+                         collect_data();
+                         destin_mon.print();
+			 dmon_port.write(destin_mon);
+                      end
+					  
           endtask 
+
+// collect the data from interface 
+
+         task collect_data();
+                
+               destin_mon = destin_xtn :: type_id :: create("destin_mon");
+                  
+               while( vif.destin_mon.read_enb !== 1'b1)
+	             begin
+                            @(vif.destin_mon);                      
+                     end      
+            	@(vif.destin_mon);			
+                destin_mon.header_byte = vif.destin_mon.data_out;
+				
+                @(vif.destin_mon);
+                destin_mon.payload = new[destin_mon.header_byte[7:2]];				
+               foreach(destin_mon.payload[i])
+                   begin
+                        while( vif.destin_mon.valid_out !== 1'b1)
+                             begin
+                                  @(vif.destin_mon);
+                             end   
+                        destin_mon.payload[i] = vif.destin_mon.data_out;                     
+                        @(vif.destin_mon);
+						
+                   end
+                destin_mon.parity_byte = vif.destin_mon.data_out;
+                   @(vif.destin_mon);
+				
+         endtask
 
 
 endclass
+
+

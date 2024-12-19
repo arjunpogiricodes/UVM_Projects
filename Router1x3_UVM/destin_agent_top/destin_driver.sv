@@ -7,7 +7,7 @@
 
 //destination driver class
 
-class destin_driver extends uvm_driver #(uvm_sequence_item);
+class destin_driver extends uvm_driver #(destin_xtn);
 
 // factory registration
 
@@ -52,12 +52,48 @@ class destin_driver extends uvm_driver #(uvm_sequence_item);
   
           task run_phase(uvm_phase phase);
  
-               phase.raise_objection(this);
-                     super.run_phase(phase);
-                     // #10; 
-               phase.drop_objection(this);
+               forever 
+                      begin
+                             super.run_phase(phase);
+                         
+                             seq_item_port.get_next_item(req);
+                             
 
+                               send_to_dut();
+                               //req.print();
+                             
+                              seq_item_port.item_done();
+                             
+                      end
           endtask
+
+
+// task send to dut
+
+         task send_to_dut();
+               
+                  while(vif.destin_drv.valid_out !== 1'b1)
+	              begin
+                        @(vif.destin_drv);
+                      end 
+				   
+                   repeat(req.delay)
+                          begin 
+                               @(vif.destin_drv);
+                          end
+                   vif.destin_drv.read_enb <= 1'b1;
+                  
+                                 
+                   while(vif.destin_drv.valid_out !== 1'b0)
+		          begin
+                                @(vif.destin_drv);
+			  end  
+					
+                   vif.destin_drv.read_enb <= 1'b0;
+		    @(vif.destin_drv);
+                    
+                 
+        endtask 
 
 
        

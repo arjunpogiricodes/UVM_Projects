@@ -45,31 +45,31 @@ class source_xtn extends uvm_sequence_item;
 
 //----------------- do copy method   -----------------//
 
-         function void do_copy(uvm_object lhs);
+         function void do_copy(uvm_object rhs);
 
-                source_xtn rhs;
-                if(!$cast(rhs,lhs)) 
+                source_xtn rhs_;
+                if(!$cast(rhs_,rhs)) 
                    begin
                         `uvm_fatal("do_copy"," error because casting for do copy not working properly in source xtn")
                    end
-                super.do_copy(lhs);
-                header_byte = rhs.header_byte;
-                payload     = rhs.payload;
-                parity_byte = rhs.parity_byte;   
+                super.do_copy(rhs);
+                header_byte = rhs_.header_byte;
+                payload     = rhs_.payload;
+                parity_byte = rhs_.parity_byte;   
 
          endfunction
 
 //--------------- do compare ---------------------//
 
-        function bit do_compare(uvm_object lhs,uvm_comparer comparer);
+        function bit do_compare(uvm_object rhs,uvm_comparer comparer);
                
-               source_xtn rhs;
-               if(!$cast(rhs,lhs))
+               source_xtn rhs_;
+               if(!$cast(rhs_,rhs))
                    begin
                        `uvm_fatal("do_compare","fatal because casting for do comapre cast not working properly in source xtn") 
                         return 0;
                    end
-               return super.do_compare(lhs,comparer) &&(header_byte == rhs.header_byte) && ( payload == rhs.payload) && (parity_byte == rhs.parity_byte); 
+               return super.do_compare(rhs,comparer) &&(header_byte == rhs_.header_byte) && ( payload == rhs_.payload) && (parity_byte == rhs_.parity_byte); 
    
         endfunction
  
@@ -89,9 +89,9 @@ class source_xtn extends uvm_sequence_item;
         function void do_print(uvm_printer printer);
 
                 super.do_print(printer);
-                printer.print_field( "header_destin_address" , this.header_byte[1:0] , 2, UVM_DEC);
-                printer.print_field( "header_payload_lenth" , this.header_byte[7:2] , 6 , UVM_DEC);
-
+                printer.print_field( "destin_address" , this.header_byte[1:0] , 2, UVM_DEC);
+                printer.print_field( "pay_lenth" , this.header_byte[7:2] , 6 , UVM_DEC);
+                printer.print_field( "header_byte" , this.header_byte , 8 , UVM_DEC);
                 foreach(payload[i])
                         printer.print_field($sformatf("payload[%0d]",i),this.payload[i] , 8 , UVM_DEC);
 

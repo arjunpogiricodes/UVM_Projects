@@ -106,7 +106,7 @@ class virtual_medium_seq extends virtual_seq;
 
 // factory registration
 
-       `uvm_object_utils(virtual_small_seq)
+       `uvm_object_utils(virtual_medium_seq)
 
 // function new constructor    
 

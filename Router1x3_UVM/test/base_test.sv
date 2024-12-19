@@ -21,6 +21,10 @@ class base_test extends uvm_test;
             int no_of_source = 1;
             int no_of_destin = 3;
 
+// header byte destination address setting 
+ 
+           bit [2]addr;
+
 // funciton new constructor 
 
           function new(string name = "base_test",uvm_component parent = null );
@@ -107,15 +111,27 @@ class small_seq_test extends base_test;
 
 // declaring the virtual smal_seq class handle
 
-       //small_seq seqh;
-       virtual_small_seq seqh;
+              //small_seq seqh;
+       virtual_small_seq s_seqh;
+       destin_seq  dseq;
 // function new constructor
 
-       function new(string name = "small_seq_test",uvm_component parent = null);
+       function new(string name = "small_seq_test",uvm_component parent);
 
               super.new(name,parent);
+              addr = 2'd0;
+
+              uvm_config_db #(bit[2])::set(this,"*","bit",addr);
 
        endfunction 
+
+// build phase
+
+         function void build_phase(uvm_phase phase);
+
+                super.build_phase(phase);
+         
+         endfunction
 
 // run phase of small test seq
 
@@ -123,9 +139,16 @@ class small_seq_test extends base_test;
 
            task run_phase(uvm_phase phase);
                   phase.raise_objection(this);
-		        super.run_phase(phase);
-		        seqh = virtual_small_seq :: type_id :: create("seqh");
-                        seqh.start(envh.v_seqr);
+                         super.run_phase(phase);
+		                s_seqh = virtual_small_seq :: type_id :: create("s_seqh");
+                        dseq  = destin_seq        :: type_id :: create("dseq");
+                        repeat(5)
+                        begin 
+                        fork
+                        s_seqh.start(envh.v_seqr);
+                        dseq.start(envh.destin_agth.agth[addr].seqr);
+                        join
+                        end  
 		  phase.drop_objection(this);
 
            endtask	
@@ -146,26 +169,44 @@ class medium_seq_test extends base_test;
          // medium_seq seqh;
 
        virtual_medium_seq m_seqh;
+       destin_seq  dseq;
+
       
+// build phase
+
+         function void build_phase(uvm_phase phase);
+
+                super.build_phase(phase);
+         
+         endfunction
 
 // function new constructor
 
-       function new(string name = "medium_seq_test", uvm_component parent = null);
+       function new(string name = "medium_seq_test", uvm_component parent );
 
                   super.new(name,parent);
+              addr = 2'd1;
+
+              uvm_config_db #(bit[2])::set(this,"*","bit",addr);
+
 
        endfunction
 
 // run phase of medium test seq
 
 
-build phase i need to  write
-
           task run_phase(uvm_phase phase);
                   phase.raise_objection(this);
                          super.run_phase(phase);
                          m_seqh = virtual_medium_seq :: type_id :: create("m_seqh");
-                         m_seqh.start(envh.v_seqr); 
+                         dseq  = destin_seq        :: type_id :: create("dseq");
+                         repeat(5)
+                         begin
+                        fork
+                        m_seqh.start(envh.v_seqr);
+                        dseq.start(envh.destin_agth.agth[addr].seqr);
+                        join
+                        end
                   phase.drop_objection(this);
           endtask
 
@@ -185,12 +226,27 @@ class large_seq_test extends base_test;
          //large_seq seqh;
 
           virtual_large_seq l_seqh;
+          destin_seq  dseq;
+
+
+// build phase
+
+         function void build_phase(uvm_phase phase);
+
+                super.build_phase(phase);
+         
+         endfunction
+
 
 // function new constructor
 
-         function new(string name = "large_seq_test" , uvm_component parent = null);
+         function new(string name = "large_seq_test" , uvm_component parent);
 
-                 super.new(name,parent);    
+                 super.new(name,parent);  
+              addr = 2'd2;
+
+              uvm_config_db #(bit[2])::set(this,"*","bit",addr);
+  
 
          endfunction     
 
@@ -201,7 +257,15 @@ class large_seq_test extends base_test;
                      phase.raise_objection(this);
                           super.run_phase(phase);
                           l_seqh = virtual_large_seq :: type_id :: create("l_seqh");
-                          l_seqh.start(envh.v_seqr);
+                          dseq  = destin_seq        :: type_id :: create("dseq");
+                         repeat(5)
+                          begin
+                        fork
+                        l_seqh.start(envh.v_seqr);
+                        dseq.start(envh.destin_agth.agth[addr].seqr);
+                        join
+                         end
+
                     phase.drop_objection(this);                
          endtask
 

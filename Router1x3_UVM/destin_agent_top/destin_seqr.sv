@@ -6,7 +6,7 @@
 
 //destination sequencer class
 
-class destin_seqr extends uvm_sequencer #(uvm_sequence_item);
+class destin_seqr extends uvm_sequencer #(destin_xtn);
 
 // factory registration
 
@@ -23,11 +23,11 @@ class destin_seqr extends uvm_sequencer #(uvm_sequence_item);
 	  
 // build phase
 	  
-         function void build_phase(uvm_phase phase);
+     /*    function void build_phase(uvm_phase phase);
 
                  super.build_phase(phase);  
-                 //`uvm_info(get_full_name(),"this is sequencer destin",UVM_NONE)
-
+                 
          endfunction
+*/
 
 endclass

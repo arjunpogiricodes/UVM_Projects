@@ -56,7 +56,9 @@ class destin_agent extends uvm_agent;
               
                   if(m_cfg.is_active == UVM_ACTIVE)
                       begin
-                           // drvh.seq_item_port.connect(seqr.set_item_export);
+                           drvh.seq_item_port.connect(seqr.seq_item_export);
+                          // drvh.seq_item_port.connect(seqr.seq_item_export);      
+
                       end
 
 
